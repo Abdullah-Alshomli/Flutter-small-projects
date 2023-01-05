@@ -1,6 +1,6 @@
 # i_am_rich
 
-A new Flutter project.
+simple app that shows an image
 
 ## Getting Started
 
