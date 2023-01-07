@@ -1,4 +1,4 @@
-#Fri Jan 06 19:34:53 AST 2023
+#Sat Jan 07 06:37:28 AST 2023
 base.0=E\:\\Flutter_Projects\\Udemy-Flutter-Course\\mi_card_flutter\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

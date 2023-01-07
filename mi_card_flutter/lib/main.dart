@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,35 +12,74 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(color: Colors.red, height: double.infinity, width: 100),
-              Container(
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 100,
-                        height: 100,
-                        color: Colors.yellow,
-                      ),
-                      Container(
-                        width: 100,
-                        height: 100,
-                        color: Colors.green,
-                      ),
-                    ]),
+              CircleAvatar(
+                radius: 60,
+                backgroundImage: AssetImage('images/me.jpg'),
               ),
-              Container(
-                color: Colors.blue,
-                height: double.infinity,
-                width: 100,
+              Text(
+                "Abdullah Alshomali",
+                style: TextStyle(
+                    fontFamily: 'Pacifico',
+                    fontSize: 40,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                "KFUPM STUDENT",
+                style: TextStyle(
+                    fontFamily: 'Source Sans Pro',
+                    fontSize: 30,
+                    color: Colors.teal[100],
+                    letterSpacing: 5,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                width: 170,
+                height: 20,
+                child: Divider(
+                  color: Colors.teal.shade100,
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    "+966 535 922 214",
+                    style: TextStyle(
+                        fontFamily: 'Source Sans Pro',
+                        fontSize: 20,
+                        color: Colors.teal.shade900),
+                  ),
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    "abdullah.alshomli@gmail.com",
+                    style: TextStyle(
+                        fontFamily: 'Source Sans Pro',
+                        fontSize: 20,
+                        color: Colors.teal.shade900),
+                  ),
+                ),
               ),
             ],
           ),
         ),
       ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
