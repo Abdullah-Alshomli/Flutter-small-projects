@@ -1,6 +1,6 @@
 # dicee
 
-A new Flutter project.
+A new Flutter project that roll a 2d6 die.
 
 ## Getting Started
 
