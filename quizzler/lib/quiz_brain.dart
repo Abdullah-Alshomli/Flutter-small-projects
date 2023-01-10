@@ -31,7 +31,7 @@ class QuizBrain {
   ];
 
   void nextQuestion() {
-    if (questionNumber < _myQuestions.length) {
+    if (questionNumber < _myQuestions.length - 1) {
       questionNumber++;
     }
   }
@@ -42,5 +42,18 @@ class QuizBrain {
 
   bool getQuestionAnswer() {
     return _myQuestions[questionNumber].answer;
+  }
+
+  bool isFinished() {
+    if (questionNumber == _myQuestions.length - 1) {
+      print("We done bro");
+      return true;
+    }
+    print("question number = $questionNumber");
+    return false;
+  }
+
+  void restQuestions() {
+    questionNumber = 0;
   }
 }
