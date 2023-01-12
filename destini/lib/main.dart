@@ -10,6 +10,7 @@ class Destini extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark(),
       home: StoryPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
