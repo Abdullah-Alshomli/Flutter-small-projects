@@ -1,9 +1,14 @@
-import 'package:bmi_calculator/reusable_card.dart';
+// ignore_for_file: prefer_const_constructors
+
+import 'package:bmi_calculator/components/reusable_card.dart';
+import 'package:bmi_calculator/components/round_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import 'constant.dart';
-import 'icon_content.dart';
+import '../components/bottom_button.dart';
+import '../components/icon_content.dart';
+import 'results_page.dart';
+import 'package:bmi_calculator/calculator_brain.dart';
+import 'package:bmi_calculator/constant.dart';
 
 enum Gender {
   male,
@@ -195,35 +200,25 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: kBottomContainerColor,
-            width: double.infinity,
-            height: kBottomContainerHeight,
-            margin: EdgeInsets.only(top: 10),
+          BottomButton(
+            text: 'CALCULATE',
+            onPress: () {
+              CalculatorBrain calculatorBrain =
+                  CalculatorBrain(height: height, weight: weight);
+
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultsPage(
+                      bmiResult: calculatorBrain.calculateBMI(),
+                      interpretation: calculatorBrain.getInterpretation(),
+                      resultText: calculatorBrain.getResult()),
+                ),
+              );
+            },
           ),
         ],
       ),
-    );
-  }
-}
-
-class RoundedButton extends StatelessWidget {
-  RoundedButton({required this.iconData, required this.onPress});
-  final VoidCallback onPress;
-  final IconData iconData;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(iconData),
-      onPressed: onPress,
-      elevation: 0,
-      constraints: BoxConstraints.tightFor(
-        width: 56,
-        height: 56,
-      ),
-      shape: CircleBorder(),
-      fillColor: Color(0xFF4C4F5E),
     );
   }
 }
