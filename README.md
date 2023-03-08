@@ -1,2 +1,2 @@
-# Udemy-Flutter-Course
-All my projects from the Udemy Flutter course
+# Flutter projects
+All my projects while learning flutter
