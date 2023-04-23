@@ -1,2 +1,2 @@
 # Flutter projects
-All my projects while learning flutter
+All my small projects while learning flutter
